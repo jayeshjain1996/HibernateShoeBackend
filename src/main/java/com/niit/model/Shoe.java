@@ -1,5 +1,7 @@
 package com.niit.model;
 
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,10 +18,12 @@ public class Shoe
   private int shoeid;
    @Column
   private String shoebrand;
+  private String shoeimage;
   private String shoemodel;
   private int shoesize;
   private String shoecolour;
   private float price;
+  
 public int getShoeid() {
 	return shoeid;
 }
@@ -55,8 +59,12 @@ public int getShoesize() {
 }
 public void setShoesize(int shoesize) {
 	this.shoesize = shoesize;
-}	
+}
+public String getShoeimage() {
+	return shoeimage;
+}
+public void setShoeimage(String shoeimage) {
+	this.shoeimage = shoeimage;
+}
   
-  
-
 }

@@ -56,5 +56,24 @@ public class ShoeDaoImpl implements ShoeDao
 	  Query query=session.createQuery("from com.niit.model.Shoe where shoeid=:shoeid");
 	  return (Shoe)query.setParameter("shoeid",shoeid).getResultList().get(0);
 	}
+
+	@Override
+	public List<Shoe> displayHighToLow()
+	{
+		return sessionFactory.getCurrentSession().createQuery("from com.niit.model.Shoe order by price desc").list();		
+	}
+
+	@Override
+	public List<Shoe> displayLowToHigh() 
+	{
+		return sessionFactory.getCurrentSession().createQuery("from com.niit.model.Shoe order by price asc").list();
+	}
+
+	@Override
+	public List<Shoe> displayBySearch(String search) 
+	{
+		Query query=sessionFactory.getCurrentSession().createQuery("from com.niit.model.Shoe where shoebrand like :search");
+		return query.setParameter("search","%"+search+"%").getResultList();
+	}
   
 }

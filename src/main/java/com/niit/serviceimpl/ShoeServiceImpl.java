@@ -2,6 +2,8 @@ package com.niit.serviceimpl;
 
 import java.util.List;
 
+import javax.print.attribute.standard.SheetCollate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,6 +48,24 @@ public List<Shoe> displayAll()
 public Shoe displayByShoeid(int shoeid) 
 {
  return shoeDAO.displayByShoeid(shoeid);
+}
+
+@Override
+public List<Shoe> displayHighToLow() 
+{
+	return shoeDAO.displayHighToLow();
+}
+
+@Override
+public List<Shoe> displayLowToHigh() 
+{
+	return shoeDAO.displayLowToHigh();
+}
+
+@Override
+public List<Shoe> displayBySearch(String search)
+{
+	return shoeDAO.displayBySearch(search);
 }
   
 }

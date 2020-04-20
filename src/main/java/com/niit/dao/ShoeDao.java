@@ -11,4 +11,7 @@ public interface ShoeDao
  public boolean updateShoe(Shoe s);
  public List<Shoe> displayAll();
  public Shoe displayByShoeid(int shoeid);
+ public List<Shoe> displayHighToLow();
+ public List<Shoe> displayLowToHigh();
+ public List<Shoe> displayBySearch(String search);
 }
